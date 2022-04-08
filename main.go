@@ -51,7 +51,7 @@ func main() {
 	sortPullRequests(mergedPullRequests)
 
 	bytes, _ := json.MarshalIndent(mergedPullRequests, "", "  ")
-	_, _ = fmt.Fprint(os.Stdout, string(bytes))
+	_, _ = fmt.Fprint(os.Stdout, string(bytes)+"\n")
 
 	result := "great success"
 	_, _ = fmt.Fprintf(os.Stdout, "::set-output name=result::%s\n", result)
