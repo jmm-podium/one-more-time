@@ -1,2 +1,3 @@
-# one-more-time
-and then I give up
+# One More Time
+
+...and then I give up
