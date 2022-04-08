@@ -1,12 +1,20 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
-	"time"
 )
 
+var tokenFlag string
+
 func main() {
-	_, _ = fmt.Fprintf(os.Stdout, "args %s\n", os.Args[1:])
-	_, _ = fmt.Fprintf(os.Stdout, "::set-output name=time::%s\n", time.Now().Format(time.RFC3339))
+	_, _ = fmt.Fprintf(os.Stdout, "the token is set? %v\n", tokenFlag != "please-set-me")
+	result := "great success"
+	_, _ = fmt.Fprintf(os.Stdout, "::set-output name=result::%s\n", result)
+}
+
+func init() {
+	flag.StringVar(&tokenFlag, "github-token", "", "GitHub Access Token for accessing the wiki repo")
+	flag.Parse()
 }
