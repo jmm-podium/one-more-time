@@ -21,7 +21,7 @@ var (
 
 func main() {
 	ctx := context.Background()
-	_, _ = fmt.Fprintf(os.Stdout, "the token is set? %v\n", githubTokenFlag != "please-set-me")
+	_, _ = fmt.Fprintf(os.Stdout, "the token is set? %v\n", githubTokenFlag != "")
 	_, _ = fmt.Fprintf(os.Stdout, "github repo? %s\n", githubRepoFlag)
 	_, _ = fmt.Fprintf(os.Stdout, "git commit %s\n", gitCommitFlag)
 

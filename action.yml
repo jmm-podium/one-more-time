@@ -4,7 +4,12 @@ inputs:
   github-token:
     description: 'GitHub Access Token for accessing the wiki repo'
     required: true
-    default: please-set-me
+  github-repository:
+    description: 'GitHub Repository'
+    required: true
+  github-sha:
+    description: 'git commit SHA'
+    required: true
 outputs:
   result:
     description: The result of the one-more-time action
@@ -13,5 +18,5 @@ runs:
   image: 'Dockerfile'
   args:
     - -github-token=${{ inputs.github-token }}
-    - -github-repo=${{ github.repository }}
-    - -git-commit=${{ github.sha }}
+    - -github-repo=${{ inputs.github-repository }}
+    - -git-commit=${{ inputs.github-sha }}
