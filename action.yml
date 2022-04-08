@@ -13,3 +13,5 @@ runs:
   image: 'Dockerfile'
   args:
     - -github-token=${{ inputs.github-token }}
+    - -github-repo=${{ github.repository }}
+    - -git-commit=${{ github.sha }}
